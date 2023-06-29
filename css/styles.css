@@ -12,6 +12,8 @@
     --grey-color: #2e2f42;
     --white-color:#FFFFFF;
     --dairy-color: #FCFCFC;
+    
+    --transition-options: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -23,7 +25,6 @@ body {
     font-weight: 400;
     margin: 0 auto;
 }
-
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
@@ -36,6 +37,11 @@ img {
     display: block;
     max-width: 100%;
     object-fit: cover;
+}
+button, 
+input {
+    font-family: inherit;
+    line-height: inherit;
 }
 main {
     flex-grow: 1;
@@ -98,7 +104,7 @@ main {
     font-weight: 500; 
     padding: 24px 0;
     color: var(--navy-blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition-options);
 }
 .page-nav-link:hover,
 .page-nav-link:focus {
@@ -128,7 +134,7 @@ main {
 .contacts-link {
     color: var(--slate-color);
     text-decoration: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition-options);
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -143,6 +149,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-color: var(--navy-blue-color);
     background-image: linear-gradient(
         to bottom, 
         rgba(46, 47, 66, 0.7),
@@ -175,7 +182,7 @@ main {
     border-radius: 4px;
     min-width: 169px;
     min-height: 56px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);   
+    transition: background-color var(--transition-options);   
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -295,7 +302,7 @@ main {
     height: 40px;
     border-radius: 50%;
     background-color: var(--iris-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+    transition: background-color var(--transition-options);
 }
 .social-link:hover,
 .social-link:focus {
@@ -333,7 +340,7 @@ main {
     padding: 16px 32px;
     border-radius: 4px;
     color: var(--light-slate-color);
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--transition-options), color var(--transition-options);
 } 
 .custormers-svg {
     fill: currentColor;
@@ -372,6 +379,7 @@ main {
 }
 .footer-social-links {
     width: 208px;
+    margin-right: 80px;
 }
 .social-links-text {
     color: var(--white-color);
@@ -392,7 +400,7 @@ main {
     height: 100%;
     border-radius: 50%;
     background-color: var(--iris-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition-options);
 }
 .footer-networks:hover,
 .footer-networks:focus {
@@ -406,6 +414,52 @@ main {
     display: flex;
     align-items: baseline;
 }
+.footer-button {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 16px;
+    min-width: 165px;
+    min-height: 40px;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background-color: var(--iris-color);
+    border: none;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    transition: backgraund-color var(--transition-options);
+}
+.footer-button:hover,
+.footer-button:focus {
+    background-color: var(--ocean-color);
+}
+.subscribe-icon {
+    fill: var(--white-color)
+}
+.subscibe-container {
+    display: inline-block;    
+}
+.footer-form-input {
+    width: 264px;
+    height: 40px;
+    /* flex-shrink: 0; */
+    border-radius: 4px;
+    border: 1px solid var(--white-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    background-color: var(--navy-blue-color);
+    margin-right: 24px;
+    color: var(--white-color);
+    padding: 8px 0 8px 16px;
+}
+.subscibe-label {
+    font-weight: 500;
+    color: var(--white-color);
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
 
 
 /**
@@ -432,7 +486,7 @@ main {
     color: var(--iris-color);
     cursor: pointer;
     padding: 12px 24px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shodow 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+    transition: color var(--transition-options),background-color var(--transition-options), border-color 250ms var(--transition-options), box-shodow 250ms var(--transition-options);  
 }
 .filter-button:hover, 
 .filter-button:focus {
@@ -461,7 +515,7 @@ main {
 }
 .portfolio-link {
     display: block;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);   
+    transition: box-shadow var(--transition-options);   
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -481,7 +535,7 @@ main {
     color: var(--cloud-color);
     background-color: var(--iris-color);
     transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-options);
 }
 .product-card:hover .hidden-text,
 .product-card:focus .hidden-text {
@@ -500,7 +554,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--transition-options), visibility var(--transition-options);
     background-color: var(--navy-blue-modal-color);
 }
 .is-hidden {
@@ -519,7 +573,7 @@ main {
     background-color: var(--dairy-color);
     border-radius: 4px;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-options);
 } 
 .modal-close {
     position: absolute;
@@ -535,7 +589,7 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.10);
     padding: 0;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition-options), border var(--transition-options);
 }
 .modal-close:hover,
 .modal-close:focus {
@@ -544,9 +598,31 @@ main {
     border: none;
 }
 .icon-btn-close {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill var(--transition-options);
 }
 .icon-btn-close:hover,
 .icon-btn-close:focus {
     fill: var(--white-color);
+}
+.modal-form {
+    position: absolute;
+    top: 72px;
+    display: flex;
+    flex-direction: column;
+}
+.form-wrap {
+    position: relative;
+    width: 40px;
+}
+.form-icon {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    z-index: 1;
+}
+.modal-form-input {
+    position: relative;
+    width: 360px;
+    height: 40px;
+    padding-left: 38px;
 }
