@@ -604,25 +604,55 @@ main {
 .icon-btn-close:focus {
     fill: var(--white-color);
 }
+
 .modal-form {
     position: absolute;
     top: 72px;
+    left: 24px;
+    width: 360px;
     display: flex;
     flex-direction: column;
 }
+.modal-text {
+    font-weight: 500;
+    color: var(--navy-blue-color);
+    text-align: center;
+    margin-bottom: 16px;
+}
+.modal-form-label {
+    color: var(--light-slate-color); 
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.48px;
+    margin-bottom: 4px;
+}
 .form-wrap {
     position: relative;
-    width: 40px;
+    height: 40px;
 }
 .form-icon {
+    fill: var(--navy-blue-color);
+    transition: fill var(--transition-options);
+}
+
+.modal-color-icon {
+    fill: var(--ocean-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 11px;
     left: 16px;
-    z-index: 1;
 }
 .modal-form-input {
-    position: relative;
     width: 360px;
     height: 40px;
     padding-left: 38px;
+    border: 1px solid var(--navy-blue-modal-color);
+    border-radius: 4px;
+    outline: none;
+}
+ .modal-form-input:focus-within {
+    border-color: var(--iris-color);
 }
