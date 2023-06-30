@@ -39,7 +39,8 @@ img {
     object-fit: cover;
 }
 button, 
-input {
+input,
+textarea {
     font-family: inherit;
     line-height: inherit;
 }
@@ -444,7 +445,6 @@ main {
 .footer-form-input {
     width: 264px;
     height: 40px;
-    /* flex-shrink: 0; */
     border-radius: 4px;
     border: 1px solid var(--white-color);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
@@ -452,6 +452,7 @@ main {
     margin-right: 24px;
     color: var(--white-color);
     padding: 8px 0 8px 16px;
+    font-size: 12px;
 }
 .subscibe-label {
     font-weight: 500;
@@ -459,8 +460,6 @@ main {
     display: inline-block;
     margin-bottom: 16px;
 }
-
-
 
 /**
   |============================
@@ -597,6 +596,13 @@ main {
     fill: var(--white-color);
     border: none;
 }
+
+
+/**
+  |============================
+  | Забула анімувати вихід модального вікна
+  |============================
+*/
 .icon-btn-close {
     transition: fill var(--transition-options);
 }
@@ -604,7 +610,6 @@ main {
 .icon-btn-close:focus {
     fill: var(--white-color);
 }
-
 .modal-form {
     position: absolute;
     top: 72px;
@@ -630,20 +635,25 @@ main {
 .form-wrap {
     position: relative;
     height: 40px;
+    margin-bottom: 8px;
 }
 .form-icon {
-    fill: var(--navy-blue-color);
+    fill: currentColor;
     transition: fill var(--transition-options);
 }
-
 .modal-color-icon {
-    fill: var(--ocean-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 11px;
     left: 16px;
+}
+.modal-color-icon::after{
+    content: "";
+    width: 1.25px;
+    height: 18px;
+    background-color: var(--grey-color);
 }
 .modal-form-input {
     width: 360px;
@@ -652,7 +662,25 @@ main {
     border: 1px solid var(--navy-blue-modal-color);
     border-radius: 4px;
     outline: none;
+    transition: border-color var(--transition-options);
 }
- .modal-form-input:focus-within {
+.form-wrap:focus-within .modal-form-input {
     border-color: var(--iris-color);
+}
+.form-wrap:focus-within .form-icon {
+    fill: var(--iris-color);
+}
+.modal-form-comment {
+    width: 360px;
+    height: 120px;
+    border-radius: 4px;
+    border: 1px solid var(--navy-blue-modal-color);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.48px;
+    outline: none;
+    margin-top: 4px;
+    resize: none;
 }
