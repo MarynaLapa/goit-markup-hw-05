@@ -329,7 +329,7 @@ main {
     justify-content: space-between;
 }
 .customers-list-items {
-    width: calc(100%-5*24px)/6;
+    width: calc((100% - 120px) / 6);
 }
 .customers-link {
     display: flex;
@@ -345,6 +345,7 @@ main {
 } 
 .custormers-svg {
     fill: currentColor;
+    flex-shrink: 0;
 }
 .customers-link:hover,
 .custormers-svg:hover,
@@ -649,12 +650,12 @@ main {
     top: 11px;
     left: 16px;
 }
-.modal-color-icon::after{
+/* .modal-color-icon::after{
     content: "";
     width: 1.25px;
     height: 18px;
     background-color: var(--grey-color);
-}
+} */
 .modal-form-input {
     width: 360px;
     height: 40px;
@@ -683,4 +684,72 @@ main {
     outline: none;
     margin-top: 4px;
     resize: none;
+}
+.custom-checkbox {
+    position: relative;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+.modal-form-checkbox {
+    color: var(--light-slate-color);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.48px;
+}
+.checkbox-input {
+    margin-right: 8px;
+    outline: none;
+}
+.checkbox {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--dairy-color);
+    border-radius: 2px;
+    border: 1px solid var(--navy-blue-modal-color);
+    margin-right: 8px;
+    transition: border var(--transition-options), background-color var(--transition-options);
+}
+.icon-checkbox {
+    display: block;
+    fill: transparent;
+    transition: fill var(--transition-options);
+}
+.custom-check-box:focus-within .checkbox {
+    border: 1px solid var(--iris-color);
+    background-color: var(--iris-color);
+}
+.custom-check-box:focus-within .icon-checkbox {
+    fill: var(--cloud-color);
+}
+.checkbox-link {
+    color: var(--iris-color);
+}
+.form-button {
+    display: block;
+    color: var(--white-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+    border-radius: 4px;
+    border: 1px solid var(--iris-color);
+    background: var(--iris-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 16px 32px;
+    width: 169px;
+    height: 56px;
+    outline: none;
+    margin: 24px auto 0;
+    transition: background-color var(--transition-options);
+}
+.form-button:hover,
+.form-button:focus {
+    background-color: var(--ocean-color);
 }
