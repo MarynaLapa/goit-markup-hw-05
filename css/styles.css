@@ -721,11 +721,11 @@ main {
     fill: transparent;
     transition: fill var(--transition-options);
 }
-.custom-check-box:focus-within .checkbox {
+.custom-checkbox:focus-within .checkbox {
     border: 1px solid var(--iris-color);
     background-color: var(--iris-color);
 }
-.custom-check-box:focus-within .icon-checkbox {
+.custom-checkbox:focus-within .icon-checkbox {
     fill: var(--cloud-color);
 }
 .checkbox-link {
