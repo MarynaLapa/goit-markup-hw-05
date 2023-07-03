@@ -696,45 +696,44 @@ input[type="text"]::placeholder {
     background-color: transparent;
     transition: border-color var(--transition-options);
 }
-
+.comment-container:focus-within .modal-form-comment {
+    border-color: var(--iris-color);
+}
 .custom-checkbox {
-    position: relative;
     height: 16px;
     display: inline-flex;
     align-items: center;
+    margin-bottom: 24px;
 }
 .modal-form-checkbox {
+    display: flex;
+    align-items: center;
     color: var(--light-slate-color);
     font-size: 12px;
     line-height: 1.17;
-    letter-spacing: 0.48px;
-}
-.checkbox-input {
-    margin-right: 8px;
-    outline: none;
+    letter-spacing: 0.04em;
 }
 .checkbox {
     display: inline-flex; 
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin-right: 8px;
     width: 16px;
     height: 16px;
     background-color: var(--dairy-color);
     border-radius: 2px;
     border: 1px solid var(--navy-blue-modal-color);
     margin-right: 8px;
-    transition: border var(--transition-options), background-color var(--transition-options);
+    transition: border var(--transition-options), background-color var(--transition-options), fill var(--transition-options);
 }
 .icon-checkbox {
     display: block;
     fill: transparent;
-    transition: fill var(--transition-options);
+    width: 100%;
+    height: 100%;
 }
 .custom-checkbox:focus-within .checkbox {
-    border: 1px solid var(--iris-color);
+    border: none;
     background-color: var(--iris-color);
 }
 .custom-checkbox:focus-within .icon-checkbox {
@@ -742,6 +741,7 @@ input[type="text"]::placeholder {
 }
 .checkbox-link {
     color: var(--iris-color);
+    margin-left: 4px;
 }
 .form-button {
     display: block;
@@ -749,16 +749,16 @@ input[type="text"]::placeholder {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing: 0.64px;
+    letter-spacing: 0.04em;
     border-radius: 4px;
-    border: 1px solid var(--iris-color);
+    border: none;
     background: var(--iris-color);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     outline: none;
-    margin: 24px auto 0;
+    margin: 0 auto;
     transition: background-color var(--transition-options);
 }
 .form-button:hover,
