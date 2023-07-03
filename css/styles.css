@@ -43,6 +43,7 @@ input,
 textarea {
     font-family: inherit;
     line-height: inherit;
+    cursor: pointer;
 }
 main {
     flex-grow: 1;
@@ -417,13 +418,13 @@ main {
     align-items: baseline;
 }
 .footer-button {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     gap: 16px;
     min-width: 165px;
-    min-height: 40px;
+    height: 40px;
     padding: 8px 24px;
     border-radius: 4px;
     background-color: var(--iris-color);
@@ -431,36 +432,48 @@ main {
     color: var(--white-color);
     font-size: 16px;
     font-weight: 500;
+    line-height: 0.04em;
     transition: backgraund-color var(--transition-options);
 }
 .footer-button:hover,
 .footer-button:focus {
     background-color: var(--ocean-color);
 }
+.subscribe-container {
+    width: 453px;
+}
+.subscibe-text {
+    font-weight: 500;
+    color: var(--white-color);
+    margin-bottom: 16px;
+}
 .subscribe-icon {
-    fill: var(--white-color)
+    fill: var(--white-color);
+    margin-left: 16px;
 }
-.subscibe-container {
-    display: inline-block;    
+.subscribe-form {
+    display: flex;
+    gap: 24px;
 }
+
 .footer-form-input {
     width: 264px;
     height: 40px;
     border-radius: 4px;
     border: 1px solid var(--white-color);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    background-color: var(--navy-blue-color);
+    filter: drop-shadow( 4px 4px 0px rgba(0, 0, 0, 0.15));
+    background-color: transparent;
     margin-right: 24px;
     color: var(--white-color);
     padding: 8px 0 8px 16px;
     font-size: 12px;
+    letter-spacing: 0.04em;
 }
-.subscibe-label {
-    font-weight: 500;
+input[type="text"]::placeholder {
     color: var(--white-color);
-    display: inline-block;
-    margin-bottom: 16px;
+    opacity: 1;
 }
+
 
 /**
   |============================
