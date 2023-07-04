@@ -698,8 +698,6 @@ input[type="text"]::placeholder {
     margin-bottom: 24px;
 }
 .modal-form-checkbox {
-    display: flex;
-    align-items: center;
     color: var(--light-slate-color);
     font-size: 12px;
     line-height: 1.17;
@@ -709,7 +707,6 @@ input[type="text"]::placeholder {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: 8px;
     width: 16px;
     height: 16px;
     background-color: var(--dairy-color);
@@ -732,7 +729,6 @@ input[type="checkbox"]:checked + .modal-form-checkbox > .checkbox  {
 }
 .checkbox-link {
     color: var(--iris-color);
-    margin-left: 4px;
 }
 .form-button {
     display: block;
