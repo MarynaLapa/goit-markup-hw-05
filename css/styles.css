@@ -142,7 +142,7 @@ main {
 .contacts-link:focus {
     color: var(--ocean-color);
 }
-/* Header end */
+/* modal-contentHeader end */
 
 
 /* Hero section start */
@@ -194,7 +194,7 @@ main {
 /*  Hero section end */
 
 
-/* Section 2 Benefits stsrt */
+/* Section 2 Benefits start */
 .section-benefits {
     padding: 120px 0;
 }
@@ -618,9 +618,6 @@ input[type="text"]::placeholder {
 .icon-btn-close:focus {
     fill: var(--white-color);
 }
-/* .modal-content {
-    padding: 72px 24px 24px;
-} */
 .modal-form {
     width: 360px;
     display: flex;
