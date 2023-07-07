@@ -395,10 +395,10 @@ main {
     height: 40px;
 }
 .footer-networks {
-    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -437,7 +437,7 @@ main {
 }
 .footer-button:hover,
 .footer-button:focus {
-    background-color: var(--ocean-color);
+    background-color: var(--green-color);
 }
 .subscribe-text {
     font-weight: 500;
@@ -551,7 +551,7 @@ input[type="text"]::placeholder {
 
 /**
   |============================
-  | Modal start
+  | Modal Window 
   |============================
 */
 .backdrop {
@@ -598,6 +598,9 @@ input[type="text"]::placeholder {
     cursor: pointer;
     transition: background-color var(--transition-options), border var(--transition-options);
 }
+.icon-btn-close {
+    transition: fill var(--transition-options);
+}
 .modal-close:hover,
 .modal-close:focus {
     background-color: var(--ocean-color);
@@ -605,19 +608,11 @@ input[type="text"]::placeholder {
     border: none;
 }
 
-
 /**
   |============================
   | Забула анімувати вихід модального вікна
   |============================
 */
-.icon-btn-close {
-    transition: fill var(--transition-options);
-}
-.icon-btn-close:hover,
-.icon-btn-close:focus {
-    fill: var(--white-color);
-}
 .modal-form {
     width: 360px;
     display: flex;
@@ -702,6 +697,7 @@ input[type="text"]::placeholder {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    user-select: none;
 }
 .checkbox {
     display: inline-flex;
@@ -716,15 +712,18 @@ input[type="text"]::placeholder {
     transition: border var(--transition-options), background-color var(--transition-options), fill var(--transition-options);
     fill: transparent;
 }
-/* .icon-checkbox {
-    width: 100%;
-    height: 100%;
-} */
+.icon-checkbox {
+   opacity: 0; 
+   transform: scale(0);
+   transition: opacity var(--transition-options) 150ms, transform var(--transition-options) 150ms; 
+}
 input[type="checkbox"]:checked + .modal-form-checkbox > .checkbox {
     border: none;
     background-color: var(--ocean-color);
 }
-input[type="checkbox"]:checked + .modal-form-checkbox > .checkbox  {
+input[type="checkbox"]:checked + .modal-form-checkbox > .checkbox .icon-checkbox {
+    opacity: 1;
+    transform: scale(1);
     fill: var(--cloud-color);
 }
 .checkbox-link {
