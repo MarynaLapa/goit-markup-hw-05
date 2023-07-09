@@ -12,7 +12,6 @@
     --grey-color: #2e2f42;
     --white-color:#FFFFFF;
     --dairy-color: #FCFCFC;
-    
     --transition-options: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -67,6 +66,7 @@ main {
 }
 
 
+
 /* Header start */
 .container-nav {
     display: flex;
@@ -84,6 +84,7 @@ main {
 }
 .logo {
     display: inline-block;
+    text-decoration: none;
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-size: 18px;
@@ -103,6 +104,7 @@ main {
 }
 .page-nav-link {
     display: block;
+    text-decoration: none;
     font-weight: 500; 
     padding: 24px 0;
     color: var(--navy-blue-color);
@@ -271,7 +273,7 @@ main {
 /* Section 3 What are we doing end*/
 
 
-/* Section 4 Our team start*/
+/* Section 4 Our team start */
 .section-team {
     background-color: var(--cloud-color);
     padding: 120px 0;    
@@ -295,6 +297,9 @@ main {
     display: flex;
     gap: 24px;
     justify-content: center;
+}
+.social-list-item {
+    flex-basis: calc((100% - 3*24px) / 4);
 }
 .social-link {
     display: flex;
@@ -563,8 +568,9 @@ input[type="text"]::placeholder {
     height: 100%;
     transition: opacity var(--transition-options), visibility var(--transition-options);
     background-color: var(--navy-blue-modal-color);
+
 }
-.is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -574,49 +580,41 @@ input[type="text"]::placeholder {
     min-height: 100px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%) translateY(-50%);
     width: 408px;
     min-height: 584px;
     background-color: var(--dairy-color);
     border-radius: 4px;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-    transition: transform var(--transition-options);
+    transition: transform var(--transition-options) 250ms, opacity var(--transition-options) 250ms;
 } 
-.modal-close {
+.backdrop.is-hidden .modal-callback {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-70%);
+}
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 24px;
     right: 24px;
     width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 24px; 
     background-color: var(--cornflower-color);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.10);
     padding: 0;
-    cursor: pointer;
     transition: background-color var(--transition-options), border var(--transition-options);
 }
-.modal-close:hover,
-.modal-close:focus {
-    background-color: var(--ocean-color);
-    fill: var(--white-color);
-    border: none;
-}
-
-
-/**
-  |============================
-  | Забула анімувати вихід модального вікна
-  |============================
-*/
 .icon-btn-close {
     transition: fill var(--transition-options);
 }
-.icon-btn-close:hover,
-.icon-btn-close:focus {
+.close-button:hover,
+.close-button:focus {
+    background-color: var(--ocean-color);
     fill: var(--white-color);
+    border: none;
 }
 .modal-content {
     padding: 72px 24px 24px;;
@@ -654,16 +652,6 @@ input[type="text"]::placeholder {
     transform: translateY(-50%);
     transition: fill var(--transition-options);
 }
-/* .modal-color-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-    transition: fill var(--transition-options);
-} */
 .modal-form-input {
     width: 100%;
     height: 40px;
@@ -674,10 +662,10 @@ input[type="text"]::placeholder {
     transition: border-color var(--transition-options);
     background-color: transparent;
 }
-.form-wrap:focus-within .modal-form-input {
+.modal-form-input:focus {
     border-color: var(--iris-color);
 }
-.form-wrap:focus-within .form-icon {
+.modal-form-input:focus + .form-icon {
     fill: var(--iris-color);
 }
 .modal-form-comment {
@@ -696,7 +684,7 @@ input[type="text"]::placeholder {
     background-color: transparent;
     transition: border-color var(--transition-options);
 }
-.comment-container:focus-within .modal-form-comment {
+.comment-container:focus .modal-form-comment {
     border-color: var(--iris-color);
 }
 .custom-checkbox {
@@ -764,4 +752,66 @@ input[type="text"]::placeholder {
 .form-button:hover,
 .form-button:focus {
     background-color: var(--ocean-color);
+}
+
+/**
+  |============================
+  | Menu window 
+  |============================
+*/
+.menu-contrainer {
+    width: 100vw;
+    height: 100vh;
+}
+.menu-wrap {
+    padding: 80px 35px 40px 40px;
+}
+.menu-nav {
+    margin-bottom: 284px;
+}
+.menu-nav-items {
+    margin-bottom: 40px;
+}
+.menu-nav-items:last-child {
+    margin-bottom: 0;
+}
+.menu-nav-link {
+    text-decoration: none;
+    color: var(--navy-blue-color);
+}
+.menu-text-bold {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.72px;
+    text-transform: capitalize;
+}
+.menu-color {
+    color: var(--ocean-color);
+}
+.menu-contacts {
+    font-style: normal;
+    margin-bottom: 48px;
+}
+.menu-contacts-items {
+    margin-bottom: 40px;
+}
+.menu-contacts-items:last-child {
+    margin-bottom: 0;
+}
+.menu-contacts-link {
+    color: var(--slate-color);
+    text-decoration: none;
+    transition: color var(--transition-options);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;    
+    letter-spacing: 0.4px;
+}
+.menu-networks {
+    display: flex;
+    gap: 56px;
+}
+.menu-social-items {
+    flex-basis: calc((100% - 3*56px) / 4);
 }
